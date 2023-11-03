@@ -9,7 +9,6 @@ client.once(Events.ClientReady, () => {
   console.log('Ready!');
 });
 
-
 //-------------------the good stuff.---------------------
 
 client.on("messageCreate", function(message) {
@@ -235,6 +234,14 @@ if (message.author == client.user)
 
          message.channel.send(randomResponse);
       }
+
+      if (message.content === "i miss you") {
+        const responses = [ "come here", "*scratches behind your ear*", "i'm right here baby"];
+
+        const randomResponse = responses[Math.floor(Math.random() * responses.length)];
+
+        message.channel.send(randomResponse);
+     }
    });
 
 client.login(token);
